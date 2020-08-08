@@ -8,8 +8,8 @@ const Loading = () => {
     const classes = useStyles();
 
     return (
-        <Backdrop className={classes.backdrop} open>
-            <CircularProgress color="inherit" />
+        <Backdrop className={classes.backdrop} data-test="loadingContainer" open>
+            <CircularProgress color="inherit" data-test="loadingIcon" />
         </Backdrop>
     )
 }
