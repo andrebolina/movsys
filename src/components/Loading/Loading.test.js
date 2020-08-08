@@ -8,17 +8,19 @@ const setUp = (props = {}) => {
   return component;
 };
 
-describe('Loading component', () => {
+describe('Should render without errors', () => {
   let component;
   beforeEach(() => {
     component = setUp();
   });
 
-  it('Should render without errors', () => {
-    const wrapper = findByTestAtrr(component, 'loadingContainer');
-    expect(wrapper.length).toBe(1);
+  it('Should render loadingContainer', () => {
+    const loadingContainer = findByTestAtrr(component, 'loadingContainer');
+    expect(loadingContainer.length).toBe(1);
+  });
 
-    const icon = findByTestAtrr(component, 'loadingIcon');
-    expect(icon.length).toBe(1);
+  it('Should render loadingIcon', () => {
+    const loadingIcon = findByTestAtrr(component, 'loadingIcon');
+    expect(loadingIcon.length).toBe(1);
   });
 });

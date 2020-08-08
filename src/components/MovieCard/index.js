@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -20,7 +21,7 @@ function MovieCard({ infos }) {
     history.push('/movie/' + imdbId);
   }
 
-  return !infos ? null : (
+  return (
     <Card
       className={classes.root}
       onClick={() => seeMore(infos.imdbID)}
@@ -54,5 +55,14 @@ function MovieCard({ infos }) {
     </Card>
   );
 }
+
+MovieCard.propTypes = {
+  infos: PropTypes.shape({
+    imdbID: PropTypes.string,
+    Poster: PropTypes.string,
+    title: PropTypes.string,
+    rating: PropTypes.string,
+  }).isRequired,
+};
 
 export default MovieCard;

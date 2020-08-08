@@ -2,7 +2,6 @@
   "parser": "babel-eslint",
   "plugins": ["react", "prettier"],
   "rules": {
-    "prettier/prettier": "error",
-    "linebreak-style": ["error", "unix"]
+    "prettier/prettier": "error"
   }
 }

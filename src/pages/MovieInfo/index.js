@@ -25,9 +25,9 @@ const mapDispatchToProps = (dispatch) => {
 
 class MovieInfo extends Component {
   /*
-        #Comment
-        No carregamento os dados do produto informado via paramêtro na URL são obtidos
-    */
+    #Comment
+    No carregamento os dados do produto informado via paramêtro na URL são obtidos
+  */
   componentDidMount() {
     const { getMovieInfo } = this.props;
     const { imdbID } = this.props.match.params;

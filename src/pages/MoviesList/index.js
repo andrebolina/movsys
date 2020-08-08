@@ -32,9 +32,9 @@ const mapDispatchToProps = (dispatch) => {
 
 class MoviesList extends Component {
   /*
-        #Comment
-        O componente tem uma execução padrão caso seja realizada a pesquisa diretamente pela URL e não pelo formulário
-    */
+    #Comment
+    O componente tem uma execução padrão caso seja realizada a pesquisa diretamente pela URL e não pelo formulário
+  */
   componentDidMount() {
     const params = new URLSearchParams(this.props.location.search);
     if (params.get('title'))
@@ -45,9 +45,9 @@ class MoviesList extends Component {
   }
 
   /*
-        #Comment
-        Método para inverter o sentido da ordenação, sem alterar as demais informações
-    */
+    #Comment
+    Método para inverter o sentido da ordenação, sem alterar as demais informações
+  */
   handleSort() {
     const params = new URLSearchParams(this.props.location.search);
     const newSort = params.get('sort') === 'asc' ? 'desc' : 'asc';
@@ -59,9 +59,9 @@ class MoviesList extends Component {
   }
 
   /*
-        #Comment
-        Método para definir qual a propriedade a ser considerada na ordenação (Titulo ou Avaliações)
-    */
+    #Comment
+    Método para definir qual a propriedade a ser considerada na ordenação (Titulo ou Avaliações)
+  */
   handlerOrder(value) {
     const params = new URLSearchParams(this.props.location.search);
     this.props.history.push(
@@ -72,9 +72,9 @@ class MoviesList extends Component {
   }
 
   /*
-        #Comment
-        Método genérico criado para ser utilizado no método sort nativo, com o intuito de ordenar a lista de objetos com base em uma das propriedades (Titulo ou Avaliações) e em um dos sentidos (Ascendente, Descendente), recebidos via parâmetros
-    */
+    #Comment
+    Método genérico criado para ser utilizado no método sort nativo, com o intuito de ordenar a lista de objetos com base em uma das propriedades (Titulo ou Avaliações) e em um dos sentidos (Ascendente, Descendente), recebidos via parâmetros
+  */
   sort_by(field, reverse) {
     const key = function (x) {
       return x[field];
@@ -90,9 +90,9 @@ class MoviesList extends Component {
   }
 
   /*
-        #Comment
-        Método que verifica os requisitos e realiza a atualização da lista de filmes, atualizando também a URL
-    */
+    #Comment
+    Método que verifica os requisitos e realiza a atualização da lista de filmes, atualizando também a URL
+  */
   search(e) {
     e.preventDefault();
     const { getMovieList, history } = this.props;
@@ -116,12 +116,10 @@ class MoviesList extends Component {
     const order = params.get('order');
     const reverse = params.get('sort') === 'desc' ? true : false;
 
-    {
-      /*
-            #Comment
-            Confere se existem filmes retornados pela API, se positivo retorna cada filme no componente MovieCard, caso contrário exibe uma mensagem padrão
-        */
-    }
+    /*
+      #Comment
+      Confere se existem filmes retornados pela API, se positivo retorna cada filme no componente MovieCard, caso contrário exibe uma mensagem padrão
+    */
     let movieList;
     if (movies && movies.length > 0) {
       movieList = movies.sort(this.sort_by(order, reverse)).map((item, i) => {
@@ -143,9 +141,9 @@ class MoviesList extends Component {
         {isLoading && <Loading />}
 
         {/*
-                    #Comment
-                    Campos que serão usados como filtros para a pesquisa
-                */}
+          #Comment
+          Campos que serão usados como filtros para a pesquisa
+        */}
         <form
           className={classes.root}
           noValidate
@@ -171,9 +169,9 @@ class MoviesList extends Component {
         </form>
 
         {/*
-                    #Comment
-                    Campo de seleção para definir o atributo de ordenação e botão para definir a ordem
-                */}
+          #Comment
+          Campo de seleção para definir o atributo de ordenação e botão para definir a ordem
+        */}
         {movies && movies.length > 0 && (
           <div className={classes.orderParams}>
             <FormControl variant="outlined" className={classes.formControl}>
@@ -194,9 +192,9 @@ class MoviesList extends Component {
         )}
 
         {/*
-                    #Comment
-                    Verifica se o usuário já fez alguma pesquisa para exibir o resultado ou senão exibir a mensagem padrão de boas-vindas
-                */}
+          #Comment
+          Verifica se o usuário já fez alguma pesquisa para exibir o resultado ou senão exibir a mensagem padrão de boas-vindas
+        */}
         {params.get('title') || formError ? (
           <div className={classes.cardWrapper}>{movieList}</div>
         ) : (

@@ -9,6 +9,7 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.1",
@@ -37,14 +38,15 @@
     ]
   },
   "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "check-prop-types": "^1.1.2",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.3",
-    "jest": "24.9.0",
-    "jest-enzyme": "^7.1.2",
-    "eslint": "^7.6.0",
-    "babel-eslint": "^10.1.0",
+    "eslint": "^6.6.0",
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.20.5",
+    "jest": "24.9.0",
+    "jest-enzyme": "^7.1.2",
     "prettier": "2.0.5"
   }
 }
