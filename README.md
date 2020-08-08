@@ -28,11 +28,11 @@ Utilizando a [OMDb API](http://www.omdbapi.com/) (The Open Movie Database) desen
 
 #### O que será avaliado
 
-- [x] Capacidade de se adaptar a novas APIs;
-- [x] Testes unitários (Jest);
-- [x] Estrutura do projeto;
-- [x] Domínio das tecnologias utilizadas;
-- [x] Domínio do Git
+- Capacidade de se adaptar a novas APIs;
+- Testes unitários (Jest);
+- Estrutura do projeto;
+- Domínio das tecnologias utilizadas;
+- Domínio do Git
 
 ---
 
