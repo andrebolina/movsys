@@ -20,20 +20,34 @@ function MovieCard({ infos }) {
     history.push('/movie/' + imdbId);
   }
 
-  return (!infos ? null :
-    <Card className={classes.root} onClick={() => seeMore(infos.imdbID)} data-test="rootCard">
+  return !infos ? null : (
+    <Card
+      className={classes.root}
+      onClick={() => seeMore(infos.imdbID)}
+      data-test="rootCard"
+    >
       <CardActionArea data-test="actionArea">
         <CardMedia
           className={classes.media}
-          image={infos.Poster === "N/A" ? defaultPoster : infos.Poster}
+          image={infos.Poster === 'N/A' ? defaultPoster : infos.Poster}
           data-test="poster"
         />
         <CardContent>
           <Typography variant="h5" className={classes.title} data-test="title">
-          {infos.title}
+            {infos.title}
           </Typography>
-          <Typography variant="h5" className={classes.rating} data-test="rating">
-            <img src={ratingIcon} className={classes.icon} alt="" data-test="ratingIcon" />{infos.rating}
+          <Typography
+            variant="h5"
+            className={classes.rating}
+            data-test="rating"
+          >
+            <img
+              src={ratingIcon}
+              className={classes.icon}
+              alt=""
+              data-test="ratingIcon"
+            />
+            {infos.rating}
           </Typography>
         </CardContent>
       </CardActionArea>

@@ -5,13 +5,13 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import useStyles from './styles';
 
 const Loading = () => {
-    const classes = useStyles();
+  const classes = useStyles();
 
-    return (
-        <Backdrop className={classes.backdrop} data-test="loadingContainer" open>
-            <CircularProgress color="inherit" data-test="loadingIcon" />
-        </Backdrop>
-    )
-}
+  return (
+    <Backdrop className={classes.backdrop} data-test="loadingContainer" open>
+      <CircularProgress color="inherit" data-test="loadingIcon" />
+    </Backdrop>
+  );
+};
 
 export default Loading;
