@@ -42,7 +42,7 @@ class MovieInfo extends Component {
             <div className={classes.container}>
                 <Fab variant="extended" color="primary" aria-label="add" onClick={() => history.goBack()}>
                     <ArrowBackIcon className={classes.extendedIcon} />
-                    Voltar
+                    Back
                 </Fab>
 
                 <div className={classes.header}>
@@ -55,12 +55,12 @@ class MovieInfo extends Component {
                                 {movie.imdbRating}
                             </Typography>
                             <div className={classes.plot}>{movie.Plot}</div>
-                            <Chip className={classes.moreInfo} label={<><strong>Genêro:</strong> {movie.Genre}</>} />
-                            <Chip className={classes.moreInfo} label={<><strong>Diretor:</strong> {movie.Director}</>} />
-                            <Chip className={classes.moreInfo} label={<><strong>Elenco:</strong> {movie.Actors}</>} />
-                            <Chip className={classes.moreInfo} label={<><strong>Duração:</strong> {movie.Runtime}</>} />
-                            <Chip className={classes.moreInfo} label={<><strong>País de origem:</strong> {movie.Country} ({movie.Language})</>} />
-                            <Chip className={classes.moreInfo} label={<><strong>Produtora:</strong> {movie.Production}</>} />
+                            <Chip className={classes.moreInfo} label={<><strong>Genre:</strong> {movie.Genre}</>} />
+                            <Chip className={classes.moreInfo} label={<><strong>Director:</strong> {movie.Director}</>} />
+                            <Chip className={classes.moreInfo} label={<><strong>Actors:</strong> {movie.Actors}</>} />
+                            <Chip className={classes.moreInfo} label={<><strong>Runtime:</strong> {movie.Runtime}</>} />
+                            <Chip className={classes.moreInfo} label={<><strong>Country (Language):</strong> {movie.Country} ({movie.Language})</>} />
+                            <Chip className={classes.moreInfo} label={<><strong>Production:</strong> {movie.Production}</>} />
                     </div>
                 </div>
             </div>

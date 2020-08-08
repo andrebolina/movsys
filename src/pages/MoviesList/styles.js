@@ -5,6 +5,10 @@ const useStyles = theme => ({
         textAlign: 'left'
     },
 
+    logo: {
+        width: 128
+    },
+
     container: {
         height: 450,
         display: 'flex',
@@ -22,7 +26,8 @@ const useStyles = theme => ({
     },
 
     icon: {
-        fontSize: 72
+        fontSize: 72,
+        marginBottom: 15
     },
 
     welcomeMessage: {
@@ -58,6 +63,7 @@ const useStyles = theme => ({
         height: 450,
         fontSize: 18,
         display: 'flex',
+        flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
         color: '#aaa'

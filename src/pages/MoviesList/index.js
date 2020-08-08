@@ -6,14 +6,15 @@ import Card from '@material-ui/core/Card';
 import TextField from '@material-ui/core/TextField';
 import Fab from '@material-ui/core/Fab';
 import SearchIcon from '@material-ui/icons/Search';
-import MoodIcon from '@material-ui/icons/Mood';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl'
 import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
 import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
+import SentimentVeryDissatisfiedIcon from '@material-ui/icons/SentimentVeryDissatisfied';
 
+import logo from '../../assets/images/logo.png';
 import Loading from '../../components/Loading';
 import MovieCard from '../../components/MovieCard';
 
@@ -114,7 +115,7 @@ class MoviesList extends Component {
                 );
             });
         } else {
-            movieList = <div className={classes.root}><Card className={classes.card}>Nenhum resultado encontrado</Card></div>
+            movieList = <div className={classes.root}><Card className={classes.card}><SentimentVeryDissatisfiedIcon className={classes.icon} />No results found</Card></div>
         }
 
         return (
@@ -127,14 +128,14 @@ class MoviesList extends Component {
                 */}
                 <form className={classes.root} noValidate autoComplete="off" onSubmit={this.search.bind(this)}>
                     <TextField
-                        label="Título"
+                        label="Title"
                         inputRef={el => this.inputTitle = el}
                         defaultValue={params.get('title')}
                         error={formError}
-                        helperText={formError ? "Campo obrigatório" : ""}
+                        helperText={formError ? "Required" : ""}
                     />
                     <TextField
-                        label="Ano"
+                        label="Year"
                         inputRef={el => this.inputYear = el}
                         defaultValue={params.get('year')}
                     />
@@ -149,14 +150,14 @@ class MoviesList extends Component {
                 { (movies && movies.length > 0) && (
                     <div className={classes.orderParams}>
                         <FormControl variant="outlined" className={classes.formControl}>
-                            <InputLabel>Ordenar por</InputLabel>
+                            <InputLabel>Sort by</InputLabel>
                             <Select
                                 value={order}
                                 onChange={e => this.handlerOrder(e.target.value)}
-                                label="Ordenar por"
+                                label="Sort by"
                             >
-                                <MenuItem value="title">Título</MenuItem>
-                                <MenuItem value="rating">Avaliação</MenuItem>
+                                <MenuItem value="title">Title</MenuItem>
+                                <MenuItem value="rating">Rating</MenuItem>
                             </Select>
                         </FormControl>
                         <Fab onClick={() => this.handleSort()}>
@@ -173,9 +174,9 @@ class MoviesList extends Component {
                     <div className={classes.cardWrapper}>{movieList}</div>
                     ) : (
                     <div className={classes.container}>
-                        <MoodIcon className={classes.icon} />
-                        <div className={classes.welcomeMessage}>Seja bem-vindo!</div>
-                        <div className={classes.instructionsMessage}>Utilize os campos de busca acima para pesquisar um filme.</div>
+                        <img src={logo} alt="" className={classes.logo} />
+                        <div className={classes.welcomeMessage}>Welcome!</div>
+                        <div className={classes.instructionsMessage}>Use the fields above to search for a movie.</div>
                     </div>
                 )}
             </>
