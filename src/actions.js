@@ -6,7 +6,7 @@ import {
 export function getMovieList(payload) {
 	return dispatch => {
 		dispatch({ type: START_FETCHING });
-        return fetch(`${ API_URL }?${ API_KEY_QUERY_STRING }=${ API_KEY }&s=${ payload.q }&y=${payload.y}`)
+        return fetch(`${ API_URL }?${ API_KEY_QUERY_STRING }=${ API_KEY }&type=movie&s=${ payload.title }&y=${payload.year}`)
             .then(result=>result.json())
             .then(items=> {
                 if (items.Search) {
