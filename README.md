@@ -33,13 +33,13 @@ Utilizando a [OMDb API](http://www.omdbapi.com/) (The Open Movie Database) desen
 
 #### Instruções para acesso
 - Baixe o código e abra o arquivo "index.html" na pasta "dist" em seu navegador
-- Ou visite https://andrebolina.github.io/movsys/dist
+- Ou visite https://andrebolina.github.io/movsys/
 
 #### Instruções para rodar o projeto
 1. Clone o repositório Git de forma local
 2. Acesse o repositório do projeto
 3. Execute "yarn" para instalar as dependências
 4. Execute "yarn start" para rodar o projeto
-5. Visite http://localhost:8080 para visualizar o app
+5. Visite http://localhost:3000 para visualizar o app
 
-*Os trechos desenvolvidos de maior complexidade e impacto no código estão todos comentados e possuem '#Documentação' para facilitar a localização dos mesmos.*
+*Os trechos desenvolvidos de maior complexidade e impacto no código estão todos comentados e possuem '#Comment' para facilitar a localização dos mesmos.*

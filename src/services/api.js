@@ -5,6 +5,10 @@ import {
 const API_URL = process.env.REACT_APP_API_URL;
 const API_KEY = process.env.REACT_APP_API_KEY;
 
+/*
+    #Comment
+    Método para obter lista de filmes com base nos filtros de pesquisa, como a descrição do cenário contempla a avaliação, que não é retornada nesta rota, é feito uma nova obtenção dos dados individuais de cada filme da lista retornada
+*/
 export function getMovieList(payload) {
 	return dispatch => {
 		dispatch({ type: FETCHING });
@@ -29,12 +33,20 @@ export function getMovieList(payload) {
   };
 };
 
+/*
+    #Comment
+    Método para obter a avalição de determinado filme
+*/
 export async function getMovieRating(imdbId) {
     const result = await fetch(`${ API_URL }?apikey=${API_KEY}&i=${imdbId}&plot=full&r=json`);
     const movie = await result.json();
     return movie.imdbRating;
 };
 
+/*
+    #Comment
+    Método para obter todos os dados de determinado filme
+*/
 export function getMovieInfo(payload) {
 	return dispatch => {
 		dispatch({ type: FETCHING });

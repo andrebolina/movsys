@@ -24,6 +24,10 @@ const mapDispatchToProps = dispatch => {
 }
 
 class MovieInfo extends Component {
+    /*
+        #Comment
+        No carregamento os dados do produto informado via paramêtro na URL são obtidos
+    */
     componentDidMount() {
         const { getMovieInfo } = this.props;
         const { imdbID } = this.props.match.params;
@@ -40,6 +44,7 @@ class MovieInfo extends Component {
                     <ArrowBackIcon className={classes.extendedIcon} />
                     Voltar
                 </Fab>
+
                 <div className={classes.header}>
                     <img src={movie.Poster === "N/A" ? defaultPoster : movie.Poster} className={classes.poster} alt="" />
                     <div className={classes.mainProps}>
