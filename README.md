@@ -32,7 +32,7 @@ Utilizando a [OMDb API](http://www.omdbapi.com/) (The Open Movie Database) desen
 ------------------
 
 #### Instruções para acesso
-- Baixe o código e abra o arquivo "index.html" na pasta "dist" em seu navegador
+- Baixe o código e abra o arquivo "index.html" na pasta "build" em seu navegador
 - Ou visite https://andrebolina.github.io/movsys/
 
 #### Instruções para rodar o projeto
