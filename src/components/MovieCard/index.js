@@ -1,6 +1,5 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
@@ -10,23 +9,7 @@ import Typography from '@material-ui/core/Typography';
 import defaultPoster from '../../assets/images/defaultPoster.jpg';
 import ratingIcon from '../../assets/images/ratingIcon.png';
 
-const useStyles = makeStyles({
-  root: {
-  },
-  media: {
-    height: 350,
-  },
-  title: {
-    height: 65,
-  },
-  rating: {
-      textAlign: 'right'
-  },
-  icon: {
-      width: 18,
-      marginRight: 5
-  }
-});
+import useStyles from './styles';
 
 function MovieCard({ infos }) {
   const classes = useStyles();

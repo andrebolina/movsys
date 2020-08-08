@@ -1,104 +1,61 @@
 import React, { Component } from 'react';
+import { connect } from "react-redux";
+import { getMovieInfo } from '../../services/api';
 
-import { Link } from 'react-router-dom';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
-import Avatar from '@material-ui/core/Avatar';
 import Chip from '@material-ui/core/Chip';
-
 import Fab from '@material-ui/core/Fab';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
-
-import { connect } from "react-redux";
-import { getMovieDetail } from '../../actions';
 
 import defaultPoster from '../../assets/images/defaultPoster.jpg';
 import ratingIcon from '../../assets/images/ratingIcon.png';
 
-const useStyles = theme => ({
-    container: {
-        padding: 20
-    },
-    extendedIcon: {
-        marginRight: theme.spacing(1),
-    },
-    header: {
-        display: 'flex',
-        paddingTop: 20
-    },
-    poster: {
-        maxHeight: 300,
-        borderRadius: 8,
-        marginRight: 24
-    },
-    mainProps: {
-        width: '100%'
-    },
-    title: {
-        fontSize: 32,
-        fontWeight: '500',
-        display: 'inline-block',
-        marginRight: 5
-    },
-    year: {
-        display: 'inline-block',
-        color: '#888'
-    },
-    icon: {
-        width: 20,
-        marginRight: 5
-    },
-    plot: {
-        paddingTop: 20,
-        paddingBottom: 40,
-        textAlign: 'justify'
-    },
-    moreInfo: {
-        marginRight: 10,
-        marginBottom: 10
-    }
-});
+import useStyles from './styles';
 
-const mapStateToProps = state => {
-    return { item: state.item };
+const mapStateToProps = ({ movie }) => {
+    return { movie };
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-        getMovieDetail: payload => dispatch(getMovieDetail(payload))
+        getMovieInfo: payload => dispatch(getMovieInfo(payload))
     };
 }
 
 class MovieInfo extends Component {
     componentDidMount() {
-        this.props.getMovieDetail(this.props.match.params.imdbID);
+        const { getMovieInfo } = this.props;
+        const { imdbID } = this.props.match.params;
+
+        getMovieInfo(imdbID);
     }
 
     render() {
-        const { classes } = this.props;
+        const { movie, classes, history } = this.props;
+
         return (
             <div className={classes.container}>
-                <Fab variant="extended" color="primary" aria-label="add" onClick={() => this.props.history.goBack()}>
+                <Fab variant="extended" color="primary" aria-label="add" onClick={() => history.goBack()}>
                     <ArrowBackIcon className={classes.extendedIcon} />
                     Voltar
                 </Fab>
                 <div className={classes.header}>
-                    <img src={this.props.item.Poster === "N/A" ? defaultPoster : this.props.item.Poster} className={classes.poster} alt="" />
+                    <img src={movie.Poster === "N/A" ? defaultPoster : movie.Poster} className={classes.poster} alt="" />
                     <div className={classes.mainProps}>
-                            <Typography variant="h1" className={classes.title}>{this.props.item.Title}</Typography>
-                            <Typography variant="h6" className={classes.year}>({this.props.item.Year})</Typography>
+                            <Typography variant="h1" className={classes.title}>{movie.Title}</Typography>
+                            <Typography variant="h6" className={classes.year}>({movie.Year})</Typography>
                             <Typography variant="h5" className={classes.rating}>
-                                <img src={ratingIcon} className={classes.icon} alt="" />{this.props.item.imdbRating}
+                                <img src={ratingIcon} className={classes.icon} alt="" />
+                                {movie.imdbRating}
                             </Typography>
-                            <div className={classes.plot}>
-                                { this.props.item.Plot }
-                            </div>
-                            <Chip className={classes.moreInfo} label={<><strong>Genêro:</strong> {this.props.item.Genre}</>} />
-                            <Chip className={classes.moreInfo} label={<><strong>Diretor:</strong> {this.props.item.Director}</>} />
-                            <Chip className={classes.moreInfo} label={<><strong>Elenco:</strong> {this.props.item.Actors}</>} />
-                            <Chip className={classes.moreInfo} label={<><strong>Duração:</strong> {this.props.item.Runtime}</>} />
-                            <Chip className={classes.moreInfo} label={<><strong>País de origem:</strong> {this.props.item.Country} ({this.props.item.Language})</>} />
-                            <Chip className={classes.moreInfo} label={<><strong>Produtora:</strong> {this.props.item.Production}</>} />
+                            <div className={classes.plot}>{movie.Plot}</div>
+                            <Chip className={classes.moreInfo} label={<><strong>Genêro:</strong> {movie.Genre}</>} />
+                            <Chip className={classes.moreInfo} label={<><strong>Diretor:</strong> {movie.Director}</>} />
+                            <Chip className={classes.moreInfo} label={<><strong>Elenco:</strong> {movie.Actors}</>} />
+                            <Chip className={classes.moreInfo} label={<><strong>Duração:</strong> {movie.Runtime}</>} />
+                            <Chip className={classes.moreInfo} label={<><strong>País de origem:</strong> {movie.Country} ({movie.Language})</>} />
+                            <Chip className={classes.moreInfo} label={<><strong>Produtora:</strong> {movie.Production}</>} />
                     </div>
                 </div>
             </div>
