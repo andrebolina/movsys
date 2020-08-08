@@ -1,4 +1,5 @@
 import { FETCHING, SET_MOVIES, GET_MOVIE } from '../redux/constants';
+import axios from 'axios';
 
 const API_URL = process.env.REACT_APP_API_URL;
 const API_KEY = process.env.REACT_APP_API_KEY;
@@ -10,13 +11,13 @@ const API_KEY = process.env.REACT_APP_API_KEY;
 export function getMovieList(payload) {
   return (dispatch) => {
     dispatch({ type: FETCHING });
-    return fetch(
-      `${API_URL}?apikey=${API_KEY}&s=${payload.title}&y=${payload.year}&type=movie`
-    )
-      .then((result) => result.json())
-      .then((movies) => {
-        if (movies.Search) {
-          const fullMovies = movies.Search.map(async (item) => {
+    return axios
+      .get(
+        `${API_URL}?apikey=${API_KEY}&s=${payload.title}&y=${payload.year}&type=movie`
+      )
+      .then(({ data }) => {
+        if (data.Search) {
+          const fullMovies = data.Search.map(async (item) => {
             item.title = item.Title;
             item.rating = await getMovieRating(item.imdbID);
             return item;
@@ -38,10 +39,10 @@ export function getMovieList(payload) {
   Método para obter a avalição de determinado filme
 */
 export async function getMovieRating(imdbId) {
-  const result = await fetch(
+  const result = await axios.get(
     `${API_URL}?apikey=${API_KEY}&i=${imdbId}&plot=full&r=json`
   );
-  const movie = await result.json();
+  const movie = await result.data;
   return movie.imdbRating;
 }
 
@@ -52,10 +53,10 @@ export async function getMovieRating(imdbId) {
 export function getMovieInfo(payload) {
   return (dispatch) => {
     dispatch({ type: FETCHING });
-    return fetch(`${API_URL}?apikey=${API_KEY}&i=${payload}&plot=full&r=json`)
-      .then((result) => result.json())
-      .then((item) => {
-        dispatch({ type: GET_MOVIE, payload: item });
+    return axios
+      .get(`${API_URL}?apikey=${API_KEY}&i=${payload}&plot=full&r=json`)
+      .then(({ data }) => {
+        dispatch({ type: GET_MOVIE, payload: data });
       });
   };
 }
