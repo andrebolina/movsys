@@ -9,7 +9,7 @@ const useStyles = theme => ({
         height: 450,
         display: 'flex',
         flexDirection: 'column',
-        alignmItems: 'center',
+        alignItems: 'center',
         justifyContent: 'center',
         color: '#888'
     },
