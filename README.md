@@ -12,8 +12,8 @@ Using the [OMDb API](http://www.omdbapi.com/) (The Open Movie Database) develop 
 
 - [x] Movie search screen with:
   - [x] Movie search filter by Name (mandatory) and Year (optional);
-  - [x] List with the first 10 movies returned in the search (pagination is not necessary).
-  - [x] The list must have the poster of movie, the title and the average of all its ratings;
+  - [x] List the first 10 movies returned in the search (pagination is not necessary).
+  - [x] The list must have the poster, the title and the average of all ratings from movie;
   - [x] Function to order the result by alphabetical order (increasing or decreasing) or average grade (increasing or decreasing);
 - [x] Screen with detailed information of the movie (must be accessed by clicking on a movie in the search screen);
 
