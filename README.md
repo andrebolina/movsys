@@ -8,7 +8,7 @@
 
 #### Scenario
 
-Using the [OMDb API] (http://www.omdbapi.com/) (The Open Movie Database) develop two screens (don't stick too much to the design, you can choose Material to simplify things) with the following functions:
+Using the [OMDb API](http://www.omdbapi.com/) (The Open Movie Database) develop two screens (don't stick too much to the design, you can choose Material to simplify things) with the following functions:
 
 - [x] Movie search screen with:
   - [x] Movie search filter by Name (mandatory) and Year (optional);
