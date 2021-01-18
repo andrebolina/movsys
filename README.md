@@ -4,35 +4,35 @@
 
 # Movsys
 
-### Aplicação desenvolvida por [André Bolina](https://www.bolina.com.br/)
+### App developed by [André Bolina](https://bolina.dev)
 
-#### Cenário
+#### Scenario
 
-Utilizando a [OMDb API](http://www.omdbapi.com/) (The Open Movie Database) desenvolva duas telas (não se atenha muito ao design, pode optar por Material para simplificar as coisas) com as seguintes funções:
+Using the [OMDb API] (http://www.omdbapi.com/) (The Open Movie Database) develop two screens (don't stick too much to the design, you can choose Material to simplify things) with the following functions:
 
-- [x] Tela de pesquisa de filmes com:
-  - [x] Filtro de busca de filmes por Nome (obrigatório) e Ano (opcional);
-  - [x] Lista com os 10 primeiros filmes retornados na pesquisa (não é necessário ter paginação).
-  - [x] A lista deve ter o poster do filme, o título e a média de todos os ratings dele;
-  - [x] Função de ordenação do resultado por ordem alfabética (crescente ou decrescente) ou nota média (crescente ou decrescente);
-- [x] Tela com informações detalhadas do filme (deve ser acessada clicando em um filme na tela de pesquisa);
+- [x] Movie search screen with:
+  - [x] Movie search filter by Name (mandatory) and Year (optional);
+  - [x] List with the first 10 movies returned in the search (pagination is not necessary).
+  - [x] The list must have the poster of movie, the title and the average of all its ratings;
+  - [x] Function to order the result by alphabetical order (increasing or decreasing) or average grade (increasing or decreasing);
+- [x] Screen with detailed information of the movie (must be accessed by clicking on a movie in the search screen);
 
-#### Requisitos
+#### Requirements
 
-- [x] Deve ser desenvolvido em React;
-- [x] Deve ser utilizado Redux para gerenciamento de estado da aplicação;
+- [x] Must be developed in React;
+- [x] Redux must be used to manage the state of the application;
 
-#### Sugestões
+#### Suggestions
 
-- [x] Sugerimos utilização do CRA.
+- [x] We suggest use CRA (Create React App).
 
-#### O que será avaliado
+#### What will be evaluated
 
-- Capacidade de se adaptar a novas APIs;
-- Testes unitários (Jest);
-- Estrutura do projeto;
-- Domínio das tecnologias utilizadas;
-- Domínio do Git
+- Ability to adapt to new APIs;
+- Unit tests (Jest);
+- Project structure;
+- Domain of used technologies;
+- Domain of Git
 
 ---
 
@@ -49,4 +49,4 @@ Utilizando a [OMDb API](http://www.omdbapi.com/) (The Open Movie Database) desen
 4. Execute "yarn start" para rodar o projeto
 5. Visite http://localhost:3000 para visualizar o app
 
-_Os trechos desenvolvidos de maior complexidade e impacto no código estão todos comentados e possuem '#Comment' para facilitar a localização dos mesmos._
+_The developed sections with greater complexity and impact on the code are all commented (in portuguese) and have '#Comment' to facilitate their localization._
