@@ -49,6 +49,7 @@
     "jest": "24.9.0",
     "jest-enzyme": "^7.1.2",
     "moxios": "^0.4.0",
+    "normalize-url": "^6.0.1",
     "prettier": "2.0.5"
   }
 }
